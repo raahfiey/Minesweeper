@@ -1,1 +1,25 @@
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+////////////////////////////////////////////////	CONSTANTS
+const int x14=7;
+const int y14=6;
+////////////////////////////////////////////////	AUtoreveal	///////////////////////////////////////////////
+int AUTOreveal(int input3, int int2, char POG[x14][y14], char MAP[x14][y14])
+	{
+	for(int k = input3-1;k<=input3+1;k++)
+		{
+		if(k < 1 || k > x14) {continue;}
+		for(int l = int2-1;l<=int2+1;l++)
+			{
+			if(l < 1 || l > y14) {continue;}
+			if(POG[k-1][l-1]==' '){continue;}
+			POG[k-1][l-1] = MAP[k-1][l-1];
+			if (POG[k-1][l-1]==' ')
+				{
+				AUTOreveal(k,l,POG,MAP);
+				}
+			}
+		}
+	return 0;
+	}
