@@ -5,25 +5,20 @@
 const int x14=7;
 const int y14=6;
 ////////////////////////////////////////////////	AUtoreveal	///////////////////////////////////////////////
-int AUTOreveal(int input3, int int2, char POG[x14][y14], char MAP[x14][y14])
+int AUTOreveal(int xCord, int yCord, char current[x14][y14], char solution[x14][y14])	//x horizontal, y vertical
 	{
-	for(int k = input3-1;k<=input3+1;k++)
+	for(int k = x-2;k<=x;k++)
 		{
-		if(k < 1 || k > x14) {continue;}
-		for(int l = int2-1;l<=int2+1;l++)
+		if(k < 0 || k > x14-1) {continue;}
+		for(int l = y-2;l<=y;l++)
 			{
-			if(l < 1 || l > y14) {continue;}
-			if(POG[k-1][l-1]==' '){continue;}
-			POG[k-1][l-1] = MAP[k-1][l-1];
-			if (POG[k-1][l-1]==' ')
+			if(l < 0 || l > y14-1) {continue;}
+			if(current[k][l]==' '){continue;}
+			current[k][l] = solution[k][l];
+			if (current[k][l]==' ')
 				{
-				AUTOreveal(k,l,POG,MAP);
+				AUTOreveal(k,l,current,solution);
 				}
 			}
 		}
 	return 0;
-	}
-//i wa doo
-// comment
-// can you read taht
-// nblalbal
