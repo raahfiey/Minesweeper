@@ -7,10 +7,10 @@ const int y14=6;
 ////////////////////////////////////////////////	AUtoreveal	///////////////////////////////////////////////
 int AUTOreveal(int xCord, int yCord, char current[x14][y14], char solution[x14][y14])	//x horizontal, y vertical
 	{
-	for(int k = x-2;k<=x;k++)
+	for(int k = xCord-2;k<=xCord;k++)
 		{
 		if(k < 0 || k > x14-1) {continue;}
-		for(int l = y-2;l<=y;l++)
+		for(int l = yCord-2;l<=yCord;l++)
 			{
 			if(l < 0 || l > y14-1) {continue;}
 			if(current[k][l]==' '){continue;}
@@ -22,3 +22,4 @@ int AUTOreveal(int xCord, int yCord, char current[x14][y14], char solution[x14][
 			}
 		}
 	return 0;
+	}
